@@ -34,7 +34,6 @@ public class CategoryStats {
         allRatings.add(app.appRating());
         allCats.add(app.appCat());
 
-        // int countCat = Collections.frequency(allCats, getCatName()); // number of items in categorys
 
         
          if(app.appRating() > getHighRating()){
@@ -79,15 +78,21 @@ for(int i=0; i < allCats.size(); i++){
 
 public int count(){
 
-    Map<String, Integer> countMap = new HashMap<>();
-    for (String item: allCats) {
+            int countCat = Collections.frequency(allCats, getCatName()); // number of items in categorys
+            return countCat;
 
-        if (countMap.containsKey(item))
-            countMap.put(item, countMap.get(item) + 1);
-        else
-            countMap.put(item, 1);
-    } return count;
 }
+
+            //     Counting...
+            // Map<String, Integer> countMap = new HashMap<>();
+            //     for (String item: allCats) {
+
+            //         if (countMap.containsKey(item))
+            //             countMap.put(item, countMap.get(item) + 1);
+            //         else
+            //             countMap.put(item, 1);
+            //     } return count;
+            // }
     
 
 

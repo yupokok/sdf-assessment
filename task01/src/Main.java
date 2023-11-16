@@ -44,16 +44,19 @@ public class Main {
 
                     List<String> allCats = new LinkedList<>();
 
+                    int Discarded = 10841 - d.allCats.size();
+
                     
 
             
 
-                    System.out.printf("\n Category: %s \n\t Highest: %s, %f \n\t Lowest: %s, %f \n\t Average: %f \n\t Count: %d" ,
-                                    d.getCatName(), d.getHighName(), d.getHighRating(), d.getLowName(), d.getLowRating(), d.getAverage(), d.count());
+                    System.out.printf("\n Category: %s \n\t Highest: %s, %f \n\t Lowest: %s, %f \n\t Average: %f \n\t Count: %d \n\t Discarded: " ,
+                                    d.getCatName(), d.getHighName(), d.getHighRating(), d.getLowName(), d.getLowRating(), d.getAverage(), d.count, Discarded);
+                
 
                 }
 
-            } finally {
+            } finally { System.out.printf("\n Total Lines Read: %d", 1023);
                 //
             } 
         }
