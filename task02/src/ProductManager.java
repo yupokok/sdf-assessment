@@ -1,4 +1,4 @@
-package task02;
+
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -51,36 +51,42 @@ public class ProductManager {
                break;
             System.out.println(result);
 
+
+            // br.lines()
+            //     .filter(result -> result.contains(":"))
+            //     .map(result -> result.split(":"))
+            //     .map(columns -> new Product(column[0], column[1]))
+            //     .
             
             
-                //processing info
+               // processing info (creating products?)
                 result.trim();
                 if(result.contains(":")){
-                String[] terms = result.split(":");
-    
-                // Product product = null;
-                // switch (terms[0]) {
-                //     case "prod_id":
-                //         product = new Product(terms[1]);
-                //         saveProduct(product);
-                //         break;
-    
-                //     case "title":
-                //          product.setTitle(terms[1]);
-                //         break;
-    
-                //     case "price":
-                //         product.setPrice(Integer.parseInt(terms[1]));
-                //         break;
-                    
-                //     case "rating":
-                //         product.setRating(Integer.parseInt(terms[1]));
-                //         break;
+                String[] terms = result.trim().split(":");
+                Product product = null;
 
+                switch (terms[0]) {
+                    case "prod_id":
+                        product = new Product(terms[1]);
+                        products.put(product.getId(), product);
+                        break;
+    
+                    case "title":
+                         product.setTitle(terms[1]);
+                        break;
+    
+                    case "price":
+                        product.setPrice(Integer.parseInt(terms[1]));
+                        break;
+                    
+                    case "rating":
+                        product.setRating(Integer.parseInt(terms[1]));
+                        break;
+                        
                 }
-          
-                
-            // }
+            } else{
+               
+            }
 
 
 
