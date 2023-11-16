@@ -15,6 +15,7 @@ public class ProductManager {
 
     private final Map<String, Product> products = new HashMap<>();
     private final Socket socket;
+    
     private void saveProduct(Product product) { 
         products.put(product.getId(), product); 
     }
@@ -50,35 +51,36 @@ public class ProductManager {
                break;
             System.out.println(result);
 
-            Product product = null;
+            
             
                 //processing info
                 result.trim();
                 if(result.contains(":")){
                 String[] terms = result.split(":");
     
-                switch (terms[0]) {
-                    case "prod_id":
-                        product = new Product(terms[1]);
-                        saveProduct(product);
-                        break;
+                // Product product = null;
+                // switch (terms[0]) {
+                //     case "prod_id":
+                //         product = new Product(terms[1]);
+                //         saveProduct(product);
+                //         break;
     
-                    case "title":
-                         product.setTitle(terms[1]);
-                        break;
+                //     case "title":
+                //          product.setTitle(terms[1]);
+                //         break;
     
-                    case "price":
-                        product.setPrice(Integer.parseInt(terms[1]));
-                        break;
+                //     case "price":
+                //         product.setPrice(Integer.parseInt(terms[1]));
+                //         break;
                     
-                    case "rating":
-                        product.setRating(Integer.parseInt(terms[1]));
-                        break;
+                //     case "rating":
+                //         product.setRating(Integer.parseInt(terms[1]));
+                //         break;
 
                 }
           
                 
-            }
+            // }
 
 
 
